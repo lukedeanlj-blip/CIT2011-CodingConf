@@ -12,7 +12,7 @@ const githubError = document.getElementById("githubError");
 const avatar = document.getElementById("avatar");
 const avatarError = document.getElementById("avatarError");
 
-// Check the form ourselves before making the ticket.
+
 form.addEventListener("submit", function(event) {
     event.preventDefault();
 
@@ -61,7 +61,7 @@ form.addEventListener("submit", function(event) {
         return;
     }
 
-    // Read the chosen picture so it can appear on the next page.
+
     const reader = new FileReader();
 
     reader.onload = function() {
