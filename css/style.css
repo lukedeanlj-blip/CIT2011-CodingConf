@@ -111,7 +111,7 @@ main > p {
     line-height: 1.6;
 }
 
-/* Navigation on each page */
+/* navigation on each page */
 body > header nav {
     display: flex;
     justify-content: center;
@@ -136,7 +136,7 @@ body > header nav a:hover {
     font-weight: 800;
 }
 
-/* Float the small edition label beside the event details */
+/* float the small edition label beside the event details */
 .event-info {
     max-width: 650px;
     margin: 18px auto;
@@ -269,7 +269,7 @@ main > a:hover {
     border-color: var(--gold);
 }
 
-/* File upload area */
+/* file upload area */
 #registrationForm input[type="file"] {
     min-height: 110px;
     border: 2px dashed var(--energy-blue);
@@ -329,7 +329,7 @@ main > a:hover {
     box-shadow: 0 10px 30px rgba(255, 138, 36, 0.4);
 }
 
-/* Keyboard focus */
+/* keyboard focus */
 :is(a, button, input):focus-visible {
     outline: 3px solid var(--gold);
     outline-offset: 4px;
@@ -369,7 +369,7 @@ main > a:hover {
     -webkit-backdrop-filter: blur(16px);
 }
 
-/* Small positioned energy detail on the glass ticket */
+/* small positioned energy on the glass ticket */
 #ticket::after {
     content: "";
     position: absolute;
