@@ -1,4 +1,4 @@
-// Load the saved registration, or return home when it is missing.
+
 const savedData = sessionStorage.getItem(
     "codingConfRegistration"
 );
