@@ -1,0 +1,610 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;700;800&display=swap');
+
+/*site colors */
+:root {
+    --dark: #090d22;
+    --dark-blue: #111c3c;
+    --royal-blue: #2364d8;
+    --energy-blue: #54c9ff;
+    --orange: #ff8a24;
+    --orange-light: #ffb45f;
+    --gold: #ffcf52;
+    --white: #f7f8ff;
+    --muted: #c8d1e4;
+    --glass: rgba(22, 40, 83, 0.65);
+}
+
+/* page settings */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-width: 320px;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Inconsolata', monospace;
+    font-size: 20px;
+    color: var(--white);
+    background-color: var(--dark);
+
+    background-image:
+        radial-gradient(circle at 45% 20%, rgba(98, 40, 143, 0.25), transparent 45%),
+        radial-gradient(
+            circle at 90% 5%,
+            rgba(255, 138, 36, 0.22),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 5% 85%,
+            rgba(35, 100, 216, 0.28),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #090d22,
+            #101a3b 55%,
+            #090d22
+        );
+
+    background-attachment: fixed;
+}
+
+/* headings */
+h1, h2, h3 {
+    margin-top: 0;
+}
+
+body > header {
+    padding: 35px 20px 10px;
+    text-align: center;
+}
+
+body > header h1 {
+    display: inline-block;
+    margin: 0;
+    color: var(--gold);
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-shadow: 0 0 24px rgba(255, 207, 82, 0.35);
+}
+
+/*  page content */
+main {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 65px 24px;
+    text-align: center;
+}
+
+main > h1,
+main > h2 {
+    max-width: 850px;
+    margin: 0 auto 24px;
+    font-size: clamp(34px, 5vw, 62px);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -1px;
+
+    background: linear-gradient(
+        110deg,
+        var(--orange),
+        var(--gold),
+        var(--white)
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+main > p {
+    max-width: 650px;
+    margin: 18px auto;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+/* Navigation on each page */
+body > header nav {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 16px;
+}
+
+body > header nav a {
+    color: var(--energy-blue);
+    font-size: 17px;
+    text-decoration: none;
+}
+
+body > header nav a:hover {
+    text-decoration: underline;
+}
+
+.site-brand {
+    margin: 0;
+    color: var(--gold);
+    font-size: 28px;
+    font-weight: 800;
+}
+
+/* Float the small edition label beside the event details */
+.event-info {
+    max-width: 650px;
+    margin: 18px auto;
+    text-align: left;
+}
+
+.event-info p {
+    margin: 10px 0;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.event-tag {
+    float: right;
+    margin: 0 0 8px 14px;
+    padding: 6px 10px;
+    border: 1px solid var(--gold);
+    border-radius: 8px;
+    color: var(--gold);
+    font-size: 14px;
+}
+
+.event-info::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.site-footer {
+    padding: 20px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+/* home page button */
+main > a {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 17px 34px;
+
+    color: var(--dark);
+    background: linear-gradient(
+        120deg,
+        var(--orange),
+        var(--gold)
+    );
+
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: 800;
+    text-decoration: none;
+
+    border: 2px solid transparent;
+    border-radius: 12px;
+
+    box-shadow: 0 8px 25px rgba(255, 138, 36, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+main > a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 35px rgba(255, 138, 36, 0.4);
+}
+
+/* registration form */
+#registrationForm {
+    width: 100%;
+    max-width: 490px;
+    margin: 45px auto 0;
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+
+    background: var(--glass);
+    border: 1px solid rgba(84, 201, 255, 0.3);
+    border-radius: 20px;
+
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+/* form labels */
+#registrationForm label {
+    margin-top: 10px;
+    color: var(--white);
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* text fields */
+#registrationForm input {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    padding: 15px;
+    min-height: 55px;
+
+    font-family: inherit;
+    font-size: 18px;
+    color: var(--white);
+
+    background: rgba(9, 13, 34, 0.55);
+    border: 1px solid #7790c4;
+    border-radius: 10px;
+
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+#registrationForm input::placeholder {
+    color: var(--muted);
+}
+
+#registrationForm input:hover {
+    border-color: var(--energy-blue);
+    background: rgba(35, 100, 216, 0.16);
+}
+
+#registrationForm input:focus {
+    border-color: var(--gold);
+}
+
+/* File upload area */
+#registrationForm input[type="file"] {
+    min-height: 110px;
+    border: 2px dashed var(--energy-blue);
+    background: rgba(35, 100, 216, 0.12);
+    cursor: pointer;
+}
+
+
+
+/* error messages */
+#registrationForm small {
+    color: var(--orange-light);
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+#registrationForm small:not(:empty) {
+    padding: 5px 8px;
+    border-left: 3px solid var(--orange);
+}
+
+#registrationForm small:empty {
+    display: none;
+}
+
+/* submit button */
+#registrationForm button {
+    width: 100%;
+    min-height: 58px;
+    margin-top: 22px;
+    padding: 15px;
+
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--dark);
+
+    background: linear-gradient(
+        110deg,
+        var(--orange),
+        var(--gold)
+    );
+
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+
+    box-shadow: 0 8px 25px rgba(255, 138, 36, 0.2);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#registrationForm button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255, 138, 36, 0.4);
+}
+
+/* Keyboard focus */
+:is(a, button, input):focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 4px;
+}
+
+/* ticket layout */
+#ticket {
+    width: 100%;
+    max-width: 760px;
+    margin: 50px auto 0;
+    padding: 32px;
+
+    display: grid;
+    position: relative;
+
+    grid-template-columns: 215px minmax(0, 1fr) 35px;
+
+    gap: 8px 16px;
+    align-items: center;
+    text-align: left;
+
+    background: linear-gradient(
+        125deg,
+        rgba(35, 100, 216, 0.32),
+        rgba(9, 13, 34, 0.88) 65%,
+        rgba(255, 138, 36, 0.18)
+    );
+
+    border: 2px solid rgba(255, 255, 255, 0.65);
+    border-radius: 20px;
+
+    box-shadow:
+        0 0 35px rgba(255, 138, 36, 0.13),
+        0 18px 45px rgba(0, 0, 0, 0.4);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+/* Small positioned energy detail on the glass ticket */
+#ticket::after {
+    content: "";
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 14px var(--orange);
+    pointer-events: none;
+}
+
+/* ticket heading and logo */
+#ticket > header,
+#ticket > h2 {
+    grid-column: 1 / -1;
+    grid-row: 1;
+}
+
+#ticket > header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+#ticket > header img {
+    width: 40px;
+    height: 40px;
+}
+
+#ticket > header h2,
+#ticket > h2 {
+    margin: 0;
+    color: var(--gold);
+    font-size: 30px;
+    font-weight: 800;
+}
+
+/* conference date and location */
+#ticket > p:nth-of-type(1),
+#ticket > p:nth-of-type(2) {
+    grid-column: 1 / -1;
+    margin: 0;
+
+    font-size: 16px;
+    color: var(--muted);
+}
+
+#ticket > p:nth-of-type(1) {
+    grid-row: 2;
+}
+
+#ticket > p:nth-of-type(2) {
+    grid-row: 3;
+    margin-bottom: 28px;
+}
+
+/* attendee photo */
+#ticketAvatar {
+    grid-column: 1;
+    grid-row: 4 / 7;
+
+    width: 200px;
+    height: 200px;
+    max-width: 100%;
+
+    object-fit: cover;
+    border: 2px solid var(--gold);
+    border-radius: 12px;
+}
+
+/* attendee name */
+#ticketName {
+    grid-column: 2;
+    grid-row: 4;
+
+    margin: 0;
+    color: var(--white);
+    font-size: 27px;
+    overflow-wrap: anywhere;
+}
+
+/* attendee email */
+#ticketEmail {
+    grid-column: 2;
+    grid-row: 5;
+
+    margin: 0;
+    color: var(--muted);
+    font-size: 15px;
+    overflow-wrap: anywhere;
+}
+
+/* github link */
+#ticketGithub {
+    grid-column: 2;
+    grid-row: 6;
+
+    color: var(--energy-blue);
+    font-size: 17px;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+#ticketGithub:hover {
+    text-decoration: underline;
+}
+
+/* ticket number */
+#ticketSerial {
+    grid-column: 3;
+    grid-row: 4 / 7;
+
+    margin: 0;
+    justify-self: center;
+
+    color: var(--gold);
+    font-size: 20px;
+    font-weight: 700;
+    writing-mode: vertical-rl;
+}
+
+/* medium screen adjustments */
+@media (max-width: 800px) and (min-width: 601px) {
+    #ticket {
+        grid-template-columns:
+            165px minmax(0, 1fr) 30px;
+        padding: 24px;
+        gap: 8px 12px;
+    }
+
+    #ticketAvatar {
+        width: 155px;
+        height: 155px;
+    }
+
+    #ticketName {
+        font-size: 23px;
+    }
+}
+
+/* mobile layout */
+@media (max-width: 600px) {
+    body {
+        background-attachment: scroll;
+    }
+
+    body > header {
+        padding: 25px 14px 0;
+    }
+
+    main {
+        padding: 40px 16px;
+    }
+
+    main > h1,
+    main > h2 {
+        font-size: clamp(30px, 8vw, 42px);
+    }
+
+    main > p {
+        font-size: 17px;
+    }
+
+    #registrationForm {
+        margin-top: 30px;
+        padding: 20px 16px;
+    }
+
+    #registrationForm label {
+        font-size: 18px;
+    }
+
+    #registrationForm input {
+        font-size: 16px;
+    }
+
+    .event-tag {
+        float: none;
+        display: inline-block;
+        margin: 0 0 6px;
+    }
+
+    .event-info {
+        text-align: center;
+    }
+
+    /* smaller picture on phones */
+    #ticket {
+        margin-top: 30px;
+        padding: 18px 12px;
+
+        grid-template-columns:
+            70px minmax(0, 1fr) 25px;
+
+        gap: 7px 10px;
+    }
+
+    #ticket > header h2,
+    #ticket > h2 {
+        font-size: 21px;
+    }
+
+    #ticket > header img {
+        width: 30px;
+        height: 30px;
+    }
+
+    #ticketAvatar {
+        width: 66px;
+        height: 66px;
+    }
+
+    #ticketName {
+        font-size: 18px;
+    }
+
+    #ticketEmail,
+    #ticketGithub {
+        font-size: 12px;
+    }
+
+    #ticketSerial {
+        font-size: 13px;
+    }
+}
+
+/* reduce motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}

@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Conf Registration</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <p class="site-brand">Coding Conf 2026</p>
+        <nav aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="login.html">Register</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Generate Your Ticket</h1>
+
+        <p>
+            Complete the form below to receive
+            your personalized conference ticket.
+        </p>
+
+        <section aria-label="Registration form">
+            <form id="registrationForm" novalidate>
+
+                <label for="fullName">Full Name</label>
+                <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    required
+                >
+                <small id="nameError" role="alert"></small>
+
+                <label for="email">Email Address</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                >
+                <small id="emailError" role="alert"></small>
+
+                <label for="github">GitHub Username</label>
+                <input
+                    type="text"
+                    id="github"
+                    name="github"
+                    placeholder="@yourusername"
+                    required
+                >
+                <small id="githubError" role="alert"></small>
+
+                <label for="avatar">Upload Profile Picture</label>
+                <input
+                    type="file"
+                    id="avatar"
+                    name="avatar"
+                    accept="image/png,image/jpeg"
+                    required
+                >
+                <small id="avatarError" role="alert"></small>
+
+                <button type="submit">
+                    Generate My Ticket
+                </button>
+
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Coding Conf 2026 – CIT2011 student project</p>
+    </footer>
+    <script src="../js/validation.js"></script>
+
+</body>
+</html>
